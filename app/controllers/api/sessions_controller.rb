@@ -1,5 +1,6 @@
 class Api::SessionsController < ApplicationController
   def show
+    banana = nil
     @user = current_user
 
     if @user

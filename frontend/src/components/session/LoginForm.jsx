@@ -1,3 +1,4 @@
+import './LoginForm.css';
 import { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
@@ -32,19 +33,19 @@ function LoginForm() {
 
 
     return(
-        <div>
-            <h1>Login</h1>
+        <div id='signInForm'>
+            <h1>Sign in</h1>
             <form onSubmit={handleSubmit}>
                 <ul>
                     {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
-                <label>Email
+                <label>Email address
                     <input type="text" value={credential} onChange={(e) => setCredential(e.target.value)} required/>
                 </label>
                 <label>Passowrd
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                 </label>
-                <button type="submit">Login</button>
+                <button type="submit">Sign in</button>
             </form>
         </div>
     )

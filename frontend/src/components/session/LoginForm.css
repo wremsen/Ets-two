@@ -21,7 +21,7 @@
     list-style: none;
     padding: 0;
     margin-bottom: 10px;
-    color: #ff0000; /* Set error text color to red */
+    color: #ff0000;
   }
   
   label {
@@ -40,7 +40,7 @@
   }
   
   button {
-    background-color: #f07d00; /* Etsy's orange color */
+    background-color: #f07d00;
     color: #fff;
     padding: 10px;
     border: none;
@@ -50,5 +50,5 @@
   }
   
   button:hover {
-    background-color: #e36900; /* Darker shade on hover */
+    background-color: #e36900;
   }

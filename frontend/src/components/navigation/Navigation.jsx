@@ -38,13 +38,13 @@ function Navigation() {
 
   return (
     <>
-    <div id='mainNavContainer'>
-        <div id='topContainer'>
-                    <NavLink to="/" style={{ color: 'orange', fontSize: '28px', textDecoration: 'none' }}>Ets-two</NavLink>
+    <div id="mainNavContainer">
+        <div id="topContainer">
+                    <NavLink to="/" style={{ color: "orange", fontSize: "28px", textDecoration: "none" }}>Ets-two</NavLink>
 
-                    <form id='navSearch'>
+                    <form id="navSearch">
                       <input type="text"/>
-                      <button type='submit'>
+                      <button type="submit">
                         {/* <i class="fa-solid fa-magnifying-glass"></i> */}
                       </button>
                     </form>
@@ -52,12 +52,12 @@ function Navigation() {
                     {sessionLinks}
                     <LoginForm/>
         </div>
-        <div id='bottomContainer'>
-          <button id='bottomNavButton'>Valentine's Day</button>
-          <button id='bottomNavButton'>Home Favorites</button>
-          <button id='bottomNavButton'>Fashion Finds</button>
-          <button id='bottomNavButton'>Gift Guides</button>
-          <button id='bottomNavButton'>Registry</button>
+        <div id="bottomContainer">
+          <button id="bottomNavButton">Valentines Day</button>
+          <button id="bottomNavButton">Home Favorites</button>
+          <button id="bottomNavButton">Fashion Finds</button>
+          <button id="bottomNavButton">Gift Guides</button>
+          <button id="bottomNavButton">Registry</button>
         </div>
     </div>
     </>

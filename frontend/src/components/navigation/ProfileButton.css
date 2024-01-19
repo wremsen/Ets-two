@@ -1,0 +1,38 @@
+
+#profileIcon {
+    background-color: #fff; /* White background for the profile icon */
+    border: none;
+    cursor: pointer;
+  }
+  
+  #profileIcon:hover {
+    background-color: rgba(173, 216, 230, 0.7); /* Light blue background with opacity on hover */
+  }
+  
+  .profile-dropdown {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    background-color: royalblue;
+    color: #fff;
+    border-radius: 10px; /* Rounded edges for the rectangle */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Box shadow for a subtle elevation effect */
+  }
+  
+  .profile-dropdown li {
+    margin-bottom: 10px; /* Adjust the spacing between list items as needed */
+  }
+  
+  #logoutButton {
+    background-color: #fff;
+    color: royalblue;
+    border: 1px solid royalblue;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  #logoutButton:hover {
+    background-color: royalblue;
+    color: #fff;
+  }

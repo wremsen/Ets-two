@@ -1,0 +1,88 @@
+#mainNavContainer {
+    position: relative;
+    height: 20vh;
+    width: 100vw; 
+    background-color: #ffffff; 
+    border: 1px solid #000; 
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #topContainer {
+    height: 70%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #bottomContainer {
+    display: flex;
+    height: 30%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid #000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #bottomNavButton {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    margin: 0 10px;
+  }
+  
+  #bottomNavButton:hover {
+    background-color: rgba(182, 182, 182, 0.704);
+  }
+  
+ #navSearch {
+    width: 65%;
+    margin: 0 10px;
+ }
+
+ #navSearch input[type="text"] {
+    width: 90%; /* 90% of the width of the form */
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 50px; /* Large border-radius to create an oval shape */
+  }
+
+  #navSearch button[type="submit"] {
+    width: 30px; 
+    height: 30px; 
+    background-color: orange; 
+    color: #fff; 
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: -37px;
+  }
+  
+  NavLink {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+
+#signInNav {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+  }
+
+  #signInNav:hover {
+    background-color: rgba(182, 182, 182, 0.704);
+    margin-left: -30px;
+  }

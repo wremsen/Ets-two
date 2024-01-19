@@ -10,6 +10,8 @@ function LoginForm() {
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
+    const [email, setEmail] = useState('');
+    
 
     if (sessionUser) return <Navigate to="/" replace={true} />;
 
@@ -31,22 +33,91 @@ function LoginForm() {
             });
     }
 
+    const navToRegister = (e) => {
+        e.preventDefault();
+        let signInModal = document.getElementById("signInContainer");
+        signInModal.style.display = "none";
+
+        let signUpForm = document.getElementById("signUpContainer");
+        signUpForm.style.display = "block";
+    }
+
+    const handleClose = (e) => {
+        e.preventDefault();
+
+        let backgroundClose = document.getElementById("background");
+        let signUpClose = document.getElementById("signUpContainer");
+
+        backgroundClose.style.display = "none";
+        signUpClose.style.display = "none";
+    }
+    const keepModal = (e) => {
+        e.stopPropagation();
+    }
+
+
+
+    const handleSignUp = (e) => {
+        e.preventDefault();
+
+       
+            setErrors([]);
+
+            return disptach(sessionActions.signup({ email, password}))
+                .catch(async (res) => {
+                    let data;
+                    try {
+                        data = await res.clone().json();
+                    } catch {
+                        data = await res.text();
+                    }
+                    if (data?.errors) setErrors(data.errors);
+                    else if (data) setErrors([data])
+                    else setErrors([res.statusText]);
+                })
+    }
+
 
     return(
-        <div id='signInForm'>
-            <h1>Sign in</h1>
-            <form onSubmit={handleSubmit}>
-                <ul>
+        <div id='background' onClick={handleClose}>
+        <div id="signInContainer" onClick={keepModal}>
+            <div id='signInForm'>
+            <h1 id='signInH1'>Sign in</h1>
+            <button id='registerLink' onClick={navToRegister}>Register</button>
+            <form id='signInForm' onSubmit={handleSubmit}>
+                <ul id='signInErrors'>
                     {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
                 <label>Email address
-                    <input type="text" value={credential} onChange={(e) => setCredential(e.target.value)} required/>
+                    <input id='signInEmail' type="text" value={credential} onChange={(e) => setCredential(e.target.value)} required/>
                 </label>
-                <label>Passowrd
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+                <label>Password
+                    <input id='SignInPassword' type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                 </label>
-                <button type="submit">Sign in</button>
+                <button id='signInButton' type="submit">Sign in</button>
             </form>
+            </div>
+        </div>
+
+
+        <div id="signUpContainer" onClick={keepModal}>
+            <h1 id="signUpH1">Create your account</h1>
+            <h3 id="signUpH3">Registration is easy</h3>
+            <form onSubmit={handleSignUp}>
+                <ul>{errors.map(error => <li key={error}>{error}</li>)}</ul>
+
+                <label>Email Address
+                    <input id="signUpEmail" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                </label>
+                <label>Password
+                    <input id="signUpPassword" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                </label>
+               
+                <button id="signUpButton" type="submit">Register</button>
+                
+            </form>
+        </div>
+
         </div>
     )
 }

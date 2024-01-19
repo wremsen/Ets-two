@@ -38,19 +38,19 @@ function SignupForm() {
     return (
         <>
         <div id="signUpContainer">
-            <h1>Create your account</h1>
-            <h3>Registration is easy</h3>
+            <h1 id="signUpH1">Create your account</h1>
+            <h3 id="signUpH3">Registration is easy</h3>
             <form onSubmit={handleSubmit}>
                 <ul>{errors.map(error => <li key={error}>{error}</li>)}</ul>
 
                 <label>Email Address
-                    <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input id="signUpEmail" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </label>
                 <label>Password
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input id="signUpPassword" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </label>
                
-                <button type="submit">Register</button>
+                <button id="signUpButton" type="submit">Register</button>
                 
             </form>
         </div>

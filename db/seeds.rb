@@ -21,6 +21,7 @@ ApplicationRecord.transaction do
       email: 'kaladin@stormblessed.io', 
       password: 'sylphrena'
     )
+
   
     # More users
     10.times do 
@@ -28,6 +29,23 @@ ApplicationRecord.transaction do
         email: Faker::Internet.unique.email,
         password: 'password'
       }) 
+    end
+
+    puts "Creating products..."
+
+    Product.create!(
+      name: 'pint glass',
+      description: 'This is a glass that is exactly one pint in size.',
+      price: 25
+    )
+
+    12.times do
+      Product.create!(
+        {name: Faker::Commerce.product_name,
+        description: Faker::Lorem.sentence,
+        price: Faker::Commerce.price(range: 7..350)}
+      )
+
     end
   
     puts "Done!"

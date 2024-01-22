@@ -45,7 +45,7 @@ function Navigation() {
                     <form id="navSearch">
                       <input type="text"/>
                       <button type="submit">
-                        {/* <i class="fa-solid fa-magnifying-glass"></i> */}
+                        <i className="fa-solid fa-magnifying-glass"></i>
                       </button>
                     </form>
 

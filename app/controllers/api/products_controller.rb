@@ -3,13 +3,12 @@ class Api::ProductsController < ApplicationController
 
   def show
     @product = Product.find(:id)
-    render :show
+    render 'api/products/show'
   end
 
   def index
     @products = Product.all
-    render :index
-    
+    render 'api/products/index'
   end
 
 

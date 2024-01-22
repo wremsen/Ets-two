@@ -1,0 +1,19 @@
+#productsContainer {
+    border: 1px solid black; /* Add a small black border to productsContainer */
+    display: flex;
+    height: 25vw;
+    padding: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.productCard {
+    cursor: pointer;
+    border: 1px solid blue;
+    width: 196px;
+    height: 118px;
+    padding: 40px;
+    border-radius: 10px;
+}

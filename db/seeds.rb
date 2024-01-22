@@ -6,14 +6,19 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-ApplicationRecord.transaction do 
+require "open-uri"
+
+# ApplicationRecord.transaction do 
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
+    Product.destroy_all
     User.destroy_all
+
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
+    ApplicationRecord.connection.reset_pk_sequence!('products')
   
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
@@ -33,13 +38,18 @@ ApplicationRecord.transaction do
 
     puts "Creating products..."
 
-    Product.create!(
+    pint_glass = Product.create!(
       name: 'pint glass',
       description: 'This is a glass that is exactly one pint in size.',
       price: 25
     )
 
-    12.times do
+    # pint_glass.photo.attach(
+    #   io: URI.open("https://etstwo-seeds.s3.amazonaws.com/lodraet-beer-glass-clear-glass__0712433_pe728846_s5.avif"),
+    #   filename: "lodraet-beer-glass-clear-glass__0712433_pe728846_s5.avif"
+    # )
+
+    11.times do
       Product.create!(
         {name: Faker::Commerce.product_name,
         description: Faker::Lorem.sentence,
@@ -49,4 +59,4 @@ ApplicationRecord.transaction do
     end
   
     puts "Done!"
-  end
+  # end

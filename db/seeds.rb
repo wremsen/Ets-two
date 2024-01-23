@@ -11,6 +11,7 @@ require "open-uri"
 # ApplicationRecord.transaction do 
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
+    Review.destroy_all
     Product.destroy_all
     User.destroy_all
 
@@ -49,13 +50,24 @@ require "open-uri"
     #   filename: "lodraet-beer-glass-clear-glass__0712433_pe728846_s5.avif"
     # )
 
-    11.times do
+    10.times do
       Product.create!(
         {name: Faker::Commerce.product_name,
         description: Faker::Lorem.sentence,
         price: Faker::Commerce.price(range: 7..350)}
       )
 
+    end
+
+    puts "creating reviews..."
+
+    55.times do
+      Review.create!(
+        body: Faker::Lorem.paragraph,
+        rating: rand(1..5),
+        product_id: rand(1..10),
+        user_id: rand(1..10)
+      )
     end
   
     puts "Done!"

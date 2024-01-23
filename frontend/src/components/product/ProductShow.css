@@ -1,3 +1,45 @@
-.productShowContainer {
-    border: 1px solid green;
+#productShowContainer {
+    border: 2px solid green;
+    display: flex;
+    flex-direction: row;
+    width: 85%;
+    margin: 0 auto;
+    height: 70vh;
+    justify-content: space-between;
 }
+
+#sidePictureContainer {
+    width: 100px;
+    border: 2px solid black;
+}
+
+#mainPictureContainer {
+    width: 430px;
+    border: 2px solid orange;
+}
+
+#descriptionContainer {
+    width: 430px;
+    border: 2px solid green;
+}
+
+.productContainer {
+    flex: 1;
+    box-sizing: border-box;
+    border: 2px solid;
+    padding: 10px;
+    font-family: 'Lucida Sans' sans-serif;
+}
+
+.productPrice {
+    font-weight: bold;
+    font-size: 1.2em; 
+}
+
+/* .productName {
+    
+}
+
+.productDescription {
+    
+} */

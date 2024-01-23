@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, fetchProduct } from "../../store/products";
+import "./ProductShow.css";
 
 export default function ProductShow() {
     const {productId} = useParams();
@@ -21,10 +22,18 @@ export default function ProductShow() {
 
 return(
         <div id="productShowContainer">
-            <p>{product.name}</p>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-            <Link to="/">Home</Link>
+            <div className="productContainer" id="sidePictureContainer">
+                many pictures here
+            </div>
+            <div className="productContainer" id="mainPictureContainer">
+                <p>picture here</p>
+            </div>
+            <div className="productContainer" id="descriptionContainer">
+                <p className="productPrice">${product.price}</p>
+                <p className="productName">{product.name}</p>
+                <p className="productDescription">{product.description}</p>
+                <Link to="/">Home</Link>
+            </div>
         </div>
 )
 }

@@ -1,19 +1,58 @@
-#productsContainer {
-    border: 1px solid black; /* Add a small black border to productsContainer */
+#outerMostConatiner {
     display: flex;
-    height: 25vw;
+}
+
+#secondaryNav {
+    height: 20vh;
+    border: 2px solid blue;
+}
+
+
+#productsContainer {
+    border: 1px solid black;
+    display: flex;
     padding: 10px;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly; 
     align-items: center;
 }
 
 .productCard {
     cursor: pointer;
     border: 1px solid blue;
-    width: 196px;
+    width: calc(16% - 20px); 
+    margin: 10px; 
     height: 118px;
-    padding: 40px;
+    box-sizing: border-box;
     border-radius: 10px;
+}
+
+#secondaryNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#splashMessage {
+    text-align: center;
+    font-size: 35px;
+    margin-top: 5px;
+}
+
+.splashButton {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 5px;
+    background-color: #3498db;
+    border: none;
+    transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.splashButton:hover {
+    transform: scale(1.1); /* Grow slightly on hover */
 }

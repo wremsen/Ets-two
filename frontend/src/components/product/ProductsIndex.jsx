@@ -18,8 +18,18 @@ export default function ProductsIndex() {
 
 
     return(
-        <div>
-            <h2>Products</h2>
+        <div id="outerMostContainer">
+            <div id="secondaryNav">
+                <h2 id="splashMessage">Handpicked finds with shipping included!</h2>
+                <div className="splashButtonContainer">
+                <button className="splashButton"></button>
+                <button className="splashButton"></button>
+                <button className="splashButton"></button>
+                <button className="splashButton"></button>
+                <button className="splashButton"></button>
+                <button className="splashButton"></button>
+                </div>
+            </div>
             <div id="productsContainer">
                 {products.map(product => {
                     return <div className="productCard" key={product.id}>

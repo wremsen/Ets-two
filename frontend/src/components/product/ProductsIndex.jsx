@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProductsArray, fetchProducts } from "../../store/products";
 import "./ProductsIndex.css";
+import { Link } from "react-router-dom";
 
 export default function ProductsIndex() {
     const dispatch = useDispatch();
@@ -26,6 +27,7 @@ export default function ProductsIndex() {
                         <p className="productDescription">{product.description}</p>
                         <p className="productPrice">{product.price}</p>
                         <p>{product.id}</p>
+                        <Link to={`products/${product.id}`}>link</Link>
                     </div>
                 })}
             </div>

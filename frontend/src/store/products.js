@@ -52,7 +52,7 @@ function productsReducer(state = {}, action) {
             return newState
         
         case RECEIVE_PRODUCT:
-            newState[action.report.id] = action.report
+            newState[action.product.product.id] = action.product.product
             return newState
 
         default:

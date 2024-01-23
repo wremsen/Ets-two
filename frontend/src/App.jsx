@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         element: <SignupForm />
       },
       {
-        path: '/products/:id',
+        path: '/products/:productId',
         element: <ProductShow />
       }
     ]

@@ -15,9 +15,13 @@ export default function ProductShow() {
         dispatch(fetchProduct(productId));
     }, [dispatch, productId])
 
+    if (!product) {
+        return null;
+    }
+
 return(
         <div id="productShowContainer">
-            {/* <p>{product.name}</p> */}
+            <p>{product.name}</p>
             <p>{product.description}</p>
             <p>{product.price}</p>
             <Link to="/">Home</Link>

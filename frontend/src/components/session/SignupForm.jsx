@@ -5,7 +5,7 @@ import * as sessionActions from '../../store/session';
 import './SignupForm.css';
 
 function SignupForm() {
-    const disptach = useDispatch();
+    const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -19,7 +19,7 @@ function SignupForm() {
        
             setErrors([]);
 
-            return disptach(sessionActions.signup({ email, password}))
+            return dispatch(sessionActions.signup({ email, password }))
                 .catch(async (res) => {
                     let data;
                     try {

@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, fetchProduct } from "../../store/products";
 import "./ProductShow.css";
+import { selectReviewsArray, fetchReviews } from "../../store/reviews";
+import ReviewCreateForm from "../review/ReviewCreate";
 
 export default function ProductShow() {
     const {productId} = useParams();
@@ -10,7 +12,16 @@ export default function ProductShow() {
     const dispatch = useDispatch();
 
     const product = useSelector(selectProduct(productId));
-    console.log(product);
+    
+    const allReviews = useSelector(selectReviewsArray);
+    const reviews = allReviews.filter(review => review.productId === product.id);
+    
+    useEffect(() => {
+        dispatch(fetchReviews());
+    }, [dispatch])
+
+    console.log(reviews);
+
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
@@ -21,6 +32,7 @@ export default function ProductShow() {
     }
 
 return(
+        <>
         <div id="productShowContainer">
             <div className="productContainer" id="sidePictureContainer">
                 many pictures here
@@ -35,5 +47,18 @@ return(
                 <Link to="/">Home</Link>
             </div>
         </div>
+
+        <div id="reviewsContainer">
+                <div id="reviewForm">
+                    <ReviewCreateForm />
+                </div>
+                {reviews.map(review => {
+                    return <div className="reviewCard" key={review.id}>
+                        <p className="reviewBody">{review.body}</p> 
+                        <p className="reviewRating">{review.rating}</p>
+                    </div>
+                })}
+        </div>
+        </>
 )
 }

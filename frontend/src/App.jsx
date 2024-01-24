@@ -7,6 +7,7 @@ import SignupForm from './components/session/SignupForm';
 import Navigation from './components/navigation/Navigation';
 import ProductsIndex from './components/product/ProductsIndex';
 import ProductShow from './components/product/ProductShow';
+import ReviewsIndex from './components/review/ReviewsIndex';
 
 
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: '/products/:productId',
         element: <ProductShow />
+      },
+      {
+        path: '/reviews',
+        element: <ReviewsIndex />
       }
     ]
   }

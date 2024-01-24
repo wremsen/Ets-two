@@ -13,9 +13,6 @@ export default function ProductsIndex() {
         dispatch(fetchProducts());
     }, [dispatch]);
 
-    console.log(products);
-
-
 
     return(
         <div id="outerMostContainer">

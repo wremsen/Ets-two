@@ -8,8 +8,19 @@
   display: none;
 }
 
-
 #signInContainer {
+  width: 342px;
+  margin: 50px auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  position: relative;
+}
+
+#signUpContainer {
   width: 342px;
   margin: 50px auto;
   background-color: #fff;
@@ -20,31 +31,28 @@
   display: none;
 }
 
+
 #signInForm {
   text-align: left;
+  /* display: flex; */
 }
 
 #signInH1 {
   font-size: 24px;
   text-align: left;
+  margin-bottom: 20px; /* Add some margin below the title */
 }
-
 
 #signInForm form {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-#signInEmail {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 12px;
+#signInForm label {
+  margin-bottom: 8px; /* Add some space between labels and input boxes */
 }
+
+#signInEmail,
 #SignInPassword {
   width: 100%;
   padding: 10px;
@@ -52,6 +60,7 @@
   box-sizing: border-box;
   border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 12px;
 }
 
 #signInButton {
@@ -63,6 +72,7 @@
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+  margin-top: 15px; /* Add some space above the button */
 }
 
 #signInButton:hover {
@@ -71,13 +81,75 @@
   opacity: 0.8;
 }
 
-#registerLink:hover {
-  background-color: black;
-  transform: scale(1.05);
-  opacity: 0.8;
+#registerLink {
+  width: 75px;
+  display: block;
+  text-align: center;
+  background-color: white;
+  font-size: 12px;
+  color: black;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+  position: relative;
+  top: -45px;
+  left: 77%;
 }
 
-#registerLink {
-  width: 40%;
+#registerLink:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Add a small box shadow on hover */
+}
+
+
+#signUpFormContainer {
+  align-items: left;
+}
+
+#signUpH1 {
+  font-weight: bold;
+  font-size: 28px; /* Adjust the font size as needed */
+}
+
+#signUpH3 {
+  font-size: 16px; /* Adjust the font size as needed */
+  padding-top: 10px;
+}
+
+#signUpFormForm {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Stretch the form items to full width */
+  padding-top: 25px;
+}
+
+#signUpFormForm label {
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+#signUpFormForm input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+
+#signUpButton {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px; /* Adjust the border-radius for rounded corners */
+  cursor: pointer;
+}
+
+#signUpButton:hover {
+  opacity: 0.8; /* Make button slightly more opaque on hover */
+  transform: scale(1.05);
 }
 

@@ -1,61 +1,11 @@
 #signUpContainer {
-    width: 342px;
-    margin: 50px auto;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: none;
-  }
-  
-  #signUpForm {
-    text-align: left;
-  }
-  
-  #signUpH1 {
-    font-size: 24px;
-    text-align: left;
-  }
-  
-  
-  #signUpForm form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #signUpEmail {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 12px;
-  }
-  #SignUpPassword {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  #signUpButton {
-    background-color: black;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
-  }
-  
-  #signUpButton:hover {
-    background-color: black;
-    transform: scale(1.05);
-    opacity: 0.8;
-  }
+  width: 342px;
+  margin: 50px auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+

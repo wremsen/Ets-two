@@ -3,11 +3,12 @@ import { useDispatch } from 'react-redux';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import LoginForm from './components/session/LoginForm';
 import * as sessionActions from './store/session';
-import SignupForm from './components/session/SignupForm';
+// import SignupForm from './components/session/SignupForm';
 import Navigation from './components/navigation/Navigation';
 import ProductsIndex from './components/product/ProductsIndex';
 import ProductShow from './components/product/ProductShow';
-import ReviewsIndex from './components/review/ReviewsIndex';
+// import ReviewsIndex from './components/review/ReviewsIndex';
+import ReviewCreateForm from './components/review/ReviewCreate';
 
 
 
@@ -42,16 +43,12 @@ const router = createBrowserRouter([
         element: <LoginForm />
       },
       {
-        path: '/signup',
-        element: <SignupForm />
-      },
-      {
         path: '/products/:productId',
         element: <ProductShow />
       },
       {
-        path: '/reviews',
-        element: <ReviewsIndex />
+        path: '/reviewaproduct',
+        element: <ReviewCreateForm />
       }
     ]
   }

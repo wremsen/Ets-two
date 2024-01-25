@@ -40,11 +40,12 @@ function Navigation() {
     <>
     <div id="mainNavContainer">
         <div id="topContainer">
-                    <NavLink to="/" style={{ color: "orange", fontSize: "28px", textDecoration: "none" }}>Ets-two</NavLink>
+                    <NavLink to="/" id='homeNavEtsTwo'>Ets-two</NavLink>
+                    <button id='categoriesButton'>Categories</button>
 
                     <form id="navSearch">
-                      <input type="text"/>
-                      <button type="submit">
+                      <input id="searchInput" type="text"/>
+                      <button id="searchSubmit" type="submit">
                         <i className="fa-solid fa-magnifying-glass"></i>
                       </button>
                     </form>

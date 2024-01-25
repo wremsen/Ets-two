@@ -33,6 +33,29 @@ function LoginForm() {
             });
     }
 
+
+
+    const handleDemoLogin = (e) => {
+        e.preventDefault()
+        setErrors([]);
+
+        let credential = "kaladin@stormblessed.io"
+        let password = "sylphrena"
+
+        return disptach(sessionActions.login({ credential, password }))
+            .catch(async (res) => {
+                let data;
+                try {
+                    data = await res.clonse().json();
+                } catch {
+                    data = await res.text();
+                }
+                if (data?.errors) setErrors(data.errors);
+                else if (data) setErrors([data]);
+                else setErrors([res.statusText]);
+            });
+    }
+
     const navToRegister = (e) => {
         e.preventDefault();
         let signInModal = document.getElementById("signInContainer");
@@ -95,15 +118,17 @@ function LoginForm() {
                     <input id='SignInPassword' type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                 </label>
                 <button id='signInButton' type="submit">Sign in</button>
+                <button id='signInButton' onClick={handleDemoLogin}>Demo Login</button>
             </form>
             </div>
         </div>
 
 
         <div id="signUpContainer" onClick={keepModal}>
+            <div id='signUpFormContainer'>
             <h1 id="signUpH1">Create your account</h1>
-            <h3 id="signUpH3">Registration is easy</h3>
-            <form onSubmit={handleSignUp}>
+            <h3 id="signUpH3">Registration is easy.</h3>
+            <form id="signUpFormForm" onSubmit={handleSignUp}>
                 <ul>{errors.map(error => <li key={error}>{error}</li>)}</ul>
 
                 <label>Email Address
@@ -116,6 +141,7 @@ function LoginForm() {
                 <button id="signUpButton" type="submit">Register</button>
                 
             </form>
+            </div>
         </div>
 
         </div>

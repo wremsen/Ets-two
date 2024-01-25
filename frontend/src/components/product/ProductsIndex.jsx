@@ -2,16 +2,21 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProductsArray, fetchProducts } from "../../store/products";
 import "./ProductsIndex.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
+
 
 export default function ProductsIndex() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const products = useSelector(selectProductsArray);
 
     useEffect(() => {
         dispatch(fetchProducts());
     }, [dispatch]);
+
+
+
 
 
     return(
@@ -29,12 +34,8 @@ export default function ProductsIndex() {
             </div>
             <div id="productsContainer">
                 {products.map(product => {
-                    return <div className="productCard" key={product.id}>
-                        <p className="productName">{product.name}</p> 
-                        <p className="productDescription">{product.description}</p>
-                        <p className="productPrice">{product.price}</p>
-                        <p>{product.id}</p>
-                        <Link to={`products/${product.id}`}>link</Link>
+                    return <div className="productCard" key={product.id} onClick={() => navigate(`/products/${product.id}`)}>
+                        <img className="productPhotoUrl" src={product?.photoUrl} />
                     </div>
                 })}
             </div>

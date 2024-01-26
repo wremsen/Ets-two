@@ -85,8 +85,8 @@ function ReviewCreateForm({review}) {
         <div id="createReviewBacgkround" onClick={handleClose}>
         <div id="createReviewContainer" onClick={keepModal}>
         <div id="createReviewForm">
-            <h1>Leave a review!</h1>
-            <form onSubmit={handleSubmit}>
+            <h1 className="reviewH1">Leave a review!</h1>
+            <form id="reviewFormForm" onSubmit={handleSubmit}>
                 <ul>{errors.map(error => <li key={error}>{error}</li>)}</ul>
 
                 <label>Overall Rating
@@ -95,11 +95,8 @@ function ReviewCreateForm({review}) {
                 <label>Add a written review
                     <input id="reviewInput" type="text" value={body} onChange={(e) => setBody(e.target.value)} />
                 </label>
-               
                 <button id="reviewSubmitButton" type="submit">Submit</button>
-                
             </form>
-
         </div>
         </div>
         </div>

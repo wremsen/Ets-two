@@ -1,5 +1,5 @@
 #productShowContainer {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     display: flex;
     flex-direction: row;
     width: 85%;
@@ -10,23 +10,23 @@
 
 #sidePictureContainer {
     width: 100px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 #mainPictureContainer {
     width: 430px;
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
 }
 
 #descriptionContainer {
     width: 430px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 }
 
 .productContainer {
     flex: 1;
     box-sizing: border-box;
-    border: 2px solid;
+    /* border: 2px solid; */
     padding: 10px;
     font-family: 'Lucida Sans' sans-serif;
 }
@@ -36,10 +36,76 @@
     font-size: 1.2em; 
 }
 
-/* .productName {
-    
+#reviewButton {
+    position: relative;
+    left: 7.3%;
+    background-color: black;
+    color: white;
+    /* border: none; */
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
-.productDescription {
-    
-} */
+#reviewButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.05)
+}
+
+#reviewsContainer {
+    position: relative;
+    left: 7.3%;
+}
+
+.reviewCard {
+    margin-bottom: 20px;
+    width: 645px;
+    border-bottom: solid grey;
+}
+
+#updateRevButton {
+    position: relative;
+    left: 3%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    /* border: none; */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+#deleteRevButton {
+    position: relative;
+    bottom: -34px;
+    left: 12%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    /* border: none; */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+#deleteRevButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+#updateRevButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

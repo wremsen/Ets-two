@@ -12,7 +12,7 @@ export default function ProductShow() {
     const dispatch = useDispatch();
 
     const product = useSelector(selectProduct(productId));
-    
+    const sessionUser = useSelector(state => state.session.user);
     const allReviews = useSelector(selectReviewsArray);
     const reviews = allReviews.filter(review => review.productId === product.id);
 
@@ -44,8 +44,6 @@ export default function ProductShow() {
         reviewModal.style.display = "block";
     }
 
-    const sessionUser = useSelector(state => state.session.user);
-
     const handleUpdateReview = (e) => {
         e.preventDefault();
         const review = e.target.dataset.review;
@@ -65,7 +63,7 @@ export default function ProductShow() {
     userLinks = (
         <div id="reviewForm">
             <ReviewCreateForm review={review} />
-            <button id="reviewButton" onClick={handleReviewOpen}></button>
+            <button id="reviewButton" onClick={handleReviewOpen}>Leave a review!</button>
         </div>
     );
   } else {
@@ -79,11 +77,8 @@ export default function ProductShow() {
 return(
         <>
         <div id="productShowContainer">
-            <div className="productContainer" id="sidePictureContainer">
-                many pictures here
-            </div>
             <div className="productContainer" id="mainPictureContainer">
-                <p>picture here</p>
+                <img className="productPhotoUrl" src={product?.photoUrl} />
             </div>
             <div className="productContainer" id="descriptionContainer">
                 <p className="productPrice">${product.price}</p>
@@ -107,8 +102,8 @@ return(
                     return <div className="reviewCard" key={review.id}>
                         <p className="reviewRating">{Array.from({ length: review.rating }, (_, index) => <span key={index}>★</span>)}</p>
                         <p className="reviewBody">{review.body}</p> 
-                        {sessionUser?.id === review.userId ? <button onClick={() => dispatch(deleteReview(review.id))}>Delete Review</button> : null}
-                        {sessionUser?.id === review.userId ? <button data-review={JSON.stringify(review)} onClick={handleUpdateReview}>Edit Review</button> : null}
+                        {sessionUser?.id === review.userId ? <button id="deleteRevButton" onClick={() => dispatch(deleteReview(review.id))}>D</button> : null}
+                        {sessionUser?.id === review.userId ? <button id="updateRevButton" data-review={JSON.stringify(review)} onClick={handleUpdateReview}>U</button> : null}
                     </div>
                 })}
         </div>

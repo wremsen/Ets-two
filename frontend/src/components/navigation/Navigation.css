@@ -3,7 +3,7 @@
   height: 15vh;
   width: 100vw; 
   background-color: #ffffff; 
-  border: 1px solid #000; 
+  border-bottom: 4px solid gray;
   display: flex;
   flex-direction: column;
 }
@@ -37,6 +37,8 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-weight: bold;
+  position: relative;
+  top: 2%;
 }
 
 #homeNavEtsTwo {

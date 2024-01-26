@@ -4,12 +4,14 @@
 
 #secondaryNav {
     height: 20vh;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
+    padding: 10px;
 }
 
 
 #productsContainer {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    margin-top: 30px;
     display: flex;
     padding: 10px;
     flex-wrap: wrap;
@@ -19,7 +21,7 @@
 
 .productCard {
     cursor: pointer;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: calc(16% - 20px); 
     margin: 10px; 
     height: 118px;
@@ -58,8 +60,14 @@
     margin-top: 20px;
     margin-left: 40px;
     margin-right: 40px;
+    cursor: pointer;
 }
 
 .splashButton:hover {
-    transform: scale(1.1); /* Grow slightly on hover */
+    transform: scale(1.1);
+}
+
+.splashButtonText {
+    position: relative;
+    top: 70%;
 }

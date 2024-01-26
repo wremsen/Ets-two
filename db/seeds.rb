@@ -45,12 +45,7 @@ require "open-uri"
       price: 25
     )
 
-    # pint_glass.photo.attach(
-    #   io: URI.open("https://etstwo-seeds.s3.amazonaws.com/lodraet-beer-glass-clear-glass__0712433_pe728846_s5.avif"),
-    #   filename: "lodraet-beer-glass-clear-glass__0712433_pe728846_s5.avif"
-    # )
-
-    11.times do
+    23.times do
       Product.create!(
         {name: Faker::Commerce.product_name,
         description: Faker::Lorem.sentence,
@@ -59,13 +54,18 @@ require "open-uri"
 
     end
 
+    Product.all.each do |product|
+      pic = URI.open("https://picsum.photos/256")
+      product.photos.attach(io: pic, filename: "product#{product.id}_thumbnail.jpg")
+    end
+
     puts "creating reviews..."
 
-    55.times do
+    215.times do |i|
       Review.create!(
         body: Faker::Lorem.paragraph,
         rating: rand(1..5),
-        product_id: rand(1..12),
+        product_id: (i + 1) % 24 + 1,
         user_id: rand(1..11)
       )
     end

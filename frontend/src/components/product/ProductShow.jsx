@@ -87,17 +87,10 @@ return(
                 <Link to="/">Home</Link>
             </div>
         </div>
-
-        {/* <div id="leaveAReviewButton">
-            <button onClick={handleReviewOpen}></button>
-        </div> */}
         <div id="linksForUser">
             {userLinks}
         </div>
         <div id="reviewsContainer">
-                {/* <div id="reviewForm">
-                    <ReviewCreateForm />
-                </div> */}
                 {reviews.map(review => {
                     return <div className="reviewCard" key={review.id}>
                         <p className="reviewRating">{Array.from({ length: review.rating }, (_, index) => <span key={index}>★</span>)}</p>

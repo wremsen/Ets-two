@@ -56,7 +56,7 @@
     margin: 5px;
     background-color: #3498db;
     border: none;
-    transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
+    transition: transform 0.2s ease-in-out;
     margin-top: 20px;
     margin-left: 40px;
     margin-right: 40px;
@@ -68,6 +68,5 @@
 }
 
 .splashButtonText {
-    position: relative;
-    top: 70%;
+    margin-top: 125%;
 }

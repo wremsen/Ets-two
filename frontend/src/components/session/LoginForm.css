@@ -40,7 +40,7 @@
 #signInH1 {
   font-size: 24px;
   text-align: left;
-  margin-bottom: 20px; /* Add some margin below the title */
+  margin-bottom: 20px; 
 }
 
 #signInForm form {
@@ -49,7 +49,7 @@
 }
 
 #signInForm label {
-  margin-bottom: 8px; /* Add some space between labels and input boxes */
+  margin-bottom: 8px; 
 }
 
 #signInEmail,
@@ -98,7 +98,7 @@
 
 #registerLink:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Add a small box shadow on hover */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
 }
 
 
@@ -108,18 +108,18 @@
 
 #signUpH1 {
   font-weight: bold;
-  font-size: 28px; /* Adjust the font size as needed */
+  font-size: 28px; 
 }
 
 #signUpH3 {
-  font-size: 16px; /* Adjust the font size as needed */
+  font-size: 16px; 
   padding-top: 10px;
 }
 
 #signUpFormForm {
   display: flex;
   flex-direction: column;
-  align-items: stretch; /* Stretch the form items to full width */
+  align-items: stretch;
   padding-top: 25px;
 }
 
@@ -144,12 +144,12 @@
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 20px; /* Adjust the border-radius for rounded corners */
+  border-radius: 20px; 
   cursor: pointer;
 }
 
 #signUpButton:hover {
-  opacity: 0.8; /* Make button slightly more opaque on hover */
+  opacity: 0.8; 
   transform: scale(1.05);
 }
 

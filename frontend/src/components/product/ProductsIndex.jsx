@@ -34,13 +34,13 @@ export default function ProductsIndex() {
                     <p className="splashButtonText">Home Decor</p>
                 </button>
                 <button className="splashButton">
-                    <p className="splashButtonText">Tees and Sweaters</p>
+                    <p className="splashButtonText">Sweaters</p>
                 </button>
                 <button className="splashButton">
                     <p className="splashButtonText">Printables</p>
                 </button>
                 <button className="splashButton">
-                    <p className="splashButtonText">Up to 40% Off!</p>
+                    <p className="splashButtonText">40% Off!</p>
                 </button>
                 </div>
             </div>

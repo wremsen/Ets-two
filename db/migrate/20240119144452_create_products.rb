@@ -9,6 +9,6 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.timestamps
     end
     add_index :products, :name
-    add_index :products, :shop_id, foreign_key: true
+    add_index :products, :shop_id
   end
 end

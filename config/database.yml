@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: Ets_two_production
-  username: Ets_two
-  password: <%= ENV["ETS_TWO_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

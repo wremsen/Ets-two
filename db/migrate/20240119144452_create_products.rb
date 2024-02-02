@@ -4,11 +4,10 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.string :name, null: false
       t.text :description, null: false
       t.integer :price, null: false
-      t.bigint :shop_id
+    
 
       t.timestamps
     end
     add_index :products, :name
-    add_index :products, :shop_id
   end
 end

@@ -5,6 +5,7 @@ import "./ProductsIndex.css";
 import { useNavigate } from 'react-router-dom';
 
 
+
 export default function ProductsIndex() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -16,31 +17,43 @@ export default function ProductsIndex() {
     }, [dispatch]);
 
 
+    const handleNavPersonal = (website) => {
+            if (website === 'echo') {
+                window.location.href = 'https://echo-p48f.onrender.com/'
+            } else if (website === 'cosmic') {
+                window.location.href = 'https://wremsen.github.io/CosmicClasses/'
+            } else if (website === 'person') {
+                window.location.href = 'https://github.com/wremsen'
+            } else if (website === 'linkedin') {
+                window.location.href = 'https://www.linkedin.com/in/billy-remsen-b0969a120/'
+            } else {
+                window.location.href = 'https://github.com/wremsen'
+            }
+    }
+
+
 
 
 
     return(
         <div id="outerMostContainer">
             <div id="secondaryNav">
-                <h2 id="splashMessage">Handpicked finds with shipping included!</h2>
+                <h2 id="splashMessage">More from Billy Remsen...</h2>
                 <div className="splashButtonContainer">
-                <button className="splashButton">
-                    <p className="splashButtonText">V-Day Gifts</p>
+                <button className="splashButton" onClick={() => handleNavPersonal('echo')}>
+                    <p className="splashButtonText">Echo</p>
                 </button>
-                <button className="splashButton">
-                    <p className="splashButtonText">Braclets</p>
+                <button className="splashButton" onClick={() => handleNavPersonal('cosmic')}>
+                    <p className="splashButtonText">Cosmic Classes</p>
                 </button>
-                <button className="splashButton">
-                    <p className="splashButtonText">Home Decor</p>
+                <button className="splashButton" onClick={() => handleNavPersonal('person')}>
+                    <p className="splashButtonText">About Me</p>
                 </button>
-                <button className="splashButton">
-                    <p className="splashButtonText">Sweaters</p>
+                <button className="splashButton" onClick={() => handleNavPersonal('linkedin')}>
+                    <p className="splashButtonText">LinkedIn</p>
                 </button>
-                <button className="splashButton">
-                    <p className="splashButtonText">Printables</p>
-                </button>
-                <button className="splashButton">
-                    <p className="splashButtonText">40% Off!</p>
+                <button className="splashButton" onClick={() => handleNavPersonal('github')}>
+                    <p className="splashButtonText">Github</p>
                 </button>
                 </div>
             </div>

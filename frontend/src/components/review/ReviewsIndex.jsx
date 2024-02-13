@@ -21,6 +21,7 @@ export default function ReviewsIndex(){
                     return <div className="reviewCard" key={review.id}>
                         <p className="reviewBody">{review.body}</p> 
                         <p className="reviewRating">{review.rating}</p>
+                        <p className="reviewBody">{review.user_id}</p>
                     </div>
                 })}
         </div>

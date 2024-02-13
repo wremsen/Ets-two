@@ -22,7 +22,7 @@ export default function ProductShow() {
         dispatch(fetchReviews());
     }, [dispatch])
 
-    console.log(reviews);
+
 
 
     useEffect(() => {
@@ -76,6 +76,7 @@ export default function ProductShow() {
 
 return(
         <>
+        <div id="allProductPageWrapper">
         <div id="productShowContainer">
             <div className="productContainer" id="mainPictureContainer">
                 <img className="productPhotoUrl" src={product?.photoUrl} />
@@ -99,6 +100,7 @@ return(
                         {sessionUser?.id === review.userId ? <button id="updateRevButton" data-review={JSON.stringify(review)} onClick={handleUpdateReview}>U</button> : null}
                     </div>
                 })}
+        </div>
         </div>
         </>
 )

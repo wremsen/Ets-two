@@ -1,3 +1,9 @@
+#allProductPageWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+}
+
 #productShowContainer {
     /* border: 2px solid green; */
     display: flex;
@@ -6,29 +12,22 @@
     margin: 0 auto;
     height: 70vh;
     justify-content: space-between;
+    border: 2px solid yellow;
 }
 
-#sidePictureContainer {
-    width: 100px;
-    /* border: 2px solid black; */
-}
 
 #mainPictureContainer {
-    width: 430px;
-    /* border: 2px solid orange; */
+    width: 50%;
+    border: 2px solid orange;
 }
 
 #descriptionContainer {
-    width: 430px;
-    /* border: 2px solid green; */
+    width: 50%;
+    border: 2px solid green;
 }
 
 .productContainer {
-    flex: 1;
-    box-sizing: border-box;
-    /* border: 2px solid; */
     padding: 10px;
-    font-family: 'Lucida Sans' sans-serif;
 }
 
 .productPrice {
@@ -60,10 +59,13 @@
 #reviewsContainer {
     /* position: relative;
     left: 7.3%; */
+    width: 85%;
     margin-left: 7.3%;
+    border: 2px solid green;
 }
 
 .reviewCard {
+    border: 1px solid black;
     margin-top: 10px;
     margin-bottom: 20px;
     width: 645px;

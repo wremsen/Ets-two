@@ -88,18 +88,25 @@ return(
                 <Link to="/">Home</Link>
             </div>
         </div>
-        <div id="linksForUser">
-            {userLinks}
-        </div>
-        <div id="reviewsContainer">
-                {reviews.map(review => {
-                    return <div className="reviewCard" key={review.id}>
-                        <p className="reviewRating">{Array.from({ length: review.rating }, (_, index) => <span key={index}>★</span>)}</p>
-                        <p className="reviewBody">{review.body}</p> 
-                        {sessionUser?.id === review.userId ? <button id="deleteRevButton" onClick={() => dispatch(deleteReview(review.id))}>D</button> : null}
-                        {sessionUser?.id === review.userId ? <button id="updateRevButton" data-review={JSON.stringify(review)} onClick={handleUpdateReview}>U</button> : null}
-                    </div>
-                })}
+        <div id="reviewWrapper">
+            <div id="linksForUser">
+                {userLinks}
+            </div>
+            <div id="reviewsContainer">
+                <div id="reviewCardsWrapper">
+                    {reviews.map(review => {
+                        return <div className="reviewCard" key={review.id}>
+                            <p className="reviewRating">{Array.from({ length: review.rating }, (_, index) => <span key={index}>★</span>)}</p>
+                            <p className="reviewBody">{review.body}</p> 
+                            {sessionUser?.id === review.userId ? <button id="deleteRevButton" onClick={() => dispatch(deleteReview(review.id))}>D</button> : null}
+                            {sessionUser?.id === review.userId ? <button id="updateRevButton" data-review={JSON.stringify(review)} onClick={handleUpdateReview}>U</button> : null}
+                        </div>
+                    })}
+                </div>
+                <div id="reviewOtherLinks">
+
+                </div>
+            </div>
         </div>
         </div>
         </>

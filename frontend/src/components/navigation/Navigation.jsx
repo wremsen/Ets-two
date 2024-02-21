@@ -4,9 +4,11 @@ import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import LoginForm from '../session/LoginForm';
 // import SignupForm from '../session/SignupForm';
+import { useNavigate } from 'react-router-dom';
 
 function Navigation() {
   const sessionUser = useSelector(state => state.session.user);
+  const navigate = useNavigate();
 
 
   const signInClick = (e) => {
@@ -36,12 +38,15 @@ function Navigation() {
     );
   }
 
+  const handleNavProduct = (productNum) => {
+    navigate(`/products/${productNum}`)
+  }
+
   return (
     <>
     <div id="mainNavContainer">
         <div id="topContainer">
                     <NavLink to="/" id='homeNavEtsTwo'>Ets-two</NavLink>
-                    <button id='categoriesButton'>Categories</button>
 
                     <form id="navSearch">
                       <input id="searchInput" type="text"/>
@@ -54,11 +59,11 @@ function Navigation() {
                     <LoginForm/>
         </div>
         <div id="bottomContainer">
-          <button id="bottomNavButton">Valentines Day</button>
-          <button id="bottomNavButton">Home Favorites</button>
-          <button id="bottomNavButton">Fashion Finds</button>
-          <button id="bottomNavButton">Gift Guides</button>
-          <button id="bottomNavButton">Registry</button>
+          <button id="bottomNavButton" onClick={() => handleNavProduct(5)}>Valentines Day</button>
+          <button id="bottomNavButton" onClick={() => handleNavProduct(8)}>Home Favorites</button>
+          <button id="bottomNavButton" onClick={() => handleNavProduct(12)}>Fashion Finds</button>
+          <button id="bottomNavButton" onClick={() => handleNavProduct(7)}>Gift Guides</button>
+          <button id="bottomNavButton" onClick={() => handleNavProduct(18)}>Registry</button>
         </div>
     </div>
     </>

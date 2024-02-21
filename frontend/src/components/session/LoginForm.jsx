@@ -23,7 +23,7 @@ function LoginForm() {
             .catch(async (res) => {
                 let data;
                 try {
-                    data = await res.clonse().json();
+                    data = await res.clone().json();
                 } catch {
                     data = await res.text();
                 }
@@ -67,6 +67,9 @@ function LoginForm() {
 
     const handleClose = (e) => {
         e.preventDefault();
+        setErrors([]);
+        setCredential('');
+        setPassword('');
 
         let backgroundClose = document.getElementById("background");
         let signUpClose = document.getElementById("signUpContainer");

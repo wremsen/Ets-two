@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 95vw;
+    align-items: center;
 }
 
 #productShowContainer {
@@ -35,33 +36,63 @@
     font-size: 1.2em; 
 }
 
+#reviewWrapper {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid slateblue;
+    width: 85%;
+    align-items: center;
+}
+
+#linksForUser {
+    width: 85%;
+    height: 10vh;
+    border: 1px solid slateblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #reviewButton {
-    margin-top: 20px;
-    position: relative;
-    left: 7.3%;
     background-color: black;
     color: white;
-    /* border: none; */
-    width: 200px;
-    height: 40px;
+    width: 15vw;
+    height: 5vh;
+    font-size: 125%;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 #reviewButton:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    transform: scale(1.05)
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.02)
 }
 
 #reviewsContainer {
     /* position: relative;
     left: 7.3%; */
-    width: 85%;
-    margin-left: 7.3%;
+    width: 100%;
     border: 2px solid green;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#reviewCardsWrapper {
+    width: 50%;
+    border: 1px solid rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#reviewOtherLinks {
+    width: 50%;
 }
 
 .reviewCard {

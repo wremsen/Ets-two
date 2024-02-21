@@ -22,7 +22,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render 'api/users/show'
     else
-      render json: { errors: ['The provided credentials were invalid.'] }, status: :unauthorized
+      render json: { errors: ['Invaild Email or Password'] }, status: :unauthorized
     end
 
 

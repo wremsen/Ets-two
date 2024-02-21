@@ -16,6 +16,7 @@ export default function ProductShow() {
     const allReviews = useSelector(selectReviewsArray);
     const reviews = allReviews.filter(review => review.productId === product.id);
 
+
     const [review, setReview] = useState(null);
     
     useEffect(() => {
@@ -48,7 +49,7 @@ export default function ProductShow() {
         e.preventDefault();
         const review = e.target.dataset.review;
 
-        console.log(review)
+
         setReview(JSON.parse(review))
         let reviewModalBG = document.getElementById("createReviewBacgkround");
         let reviewModal = document.getElementById("createReviewContainer");
@@ -90,16 +91,25 @@ return(
         </div>
         <div id="reviewWrapper">
             <div id="linksForUser">
+                <h1>{reviews.length} Total Reviews</h1>
                 {userLinks}
             </div>
             <div id="reviewsContainer">
                 <div id="reviewCardsWrapper">
                     {reviews.map(review => {
                         return <div className="reviewCard" key={review.id}>
-                            <p className="reviewRating">{Array.from({ length: review.rating }, (_, index) => <span key={index}>★</span>)}</p>
-                            <p className="reviewBody">{review.body}</p> 
+
+                            <div id="ratingWrapper">
+                                <p className="reviewRating">{Array.from({ length: review.rating }, (_, index) => <span key={index}>★</span>)}</p>
+                            </div>
+
+                            <div id="bodyWrapper">
+                                <p className="reviewBody">{review.body}</p>
+                            </div>
+                            <div id="updateDeleteWrapper"> 
                             {sessionUser?.id === review.userId ? <button id="deleteRevButton" onClick={() => dispatch(deleteReview(review.id))}>D</button> : null}
                             {sessionUser?.id === review.userId ? <button id="updateRevButton" data-review={JSON.stringify(review)} onClick={handleUpdateReview}>U</button> : null}
+                            </div>
                         </div>
                     })}
                 </div>

@@ -45,7 +45,7 @@
 #homeNavEtsTwo {
   color: #f1641e;
   text-decoration: none;
-  font-size: 28px;
+  font-size: 300%;
 }
 
 #categoriesButton:hover {
@@ -57,8 +57,8 @@
 }
 
 #searchInput {
-  width: 800px;
-  height: 20px;
+  width: 50vw;
+  height: 3vh;
   padding: 8px; 
   border: 2px solid #ccc; 
   border-radius: 20px;
@@ -67,11 +67,11 @@
 #searchSubmit {
   background-color: #f1641e; 
   border: none;
-  height: 30px;
-  width: 30px;
-  border-radius: 30px;
+  height: 4vh;
+  width: 4vh;
+  border-radius: 50%;
   cursor: pointer;
-  right: 5%;
+  right: 3%;
   position: relative;
   right: 5%;
 }
@@ -109,6 +109,7 @@
   transition: background-color 0.3s ease;
   position: relative;
   right: 2%;
+  font-size: 125%;
 }
 
 #signInNav:hover {

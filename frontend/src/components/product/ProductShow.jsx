@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, fetchProduct } from "../../store/products";
 import "./ProductShow.css";
@@ -107,15 +107,14 @@ return(
                 <img className="productPhotoUrl" src={product?.photoUrl} />
             </div>
             <div className="productContainer" id="descriptionContainer">
-                <p className="productPrice">${parseFloat(product.price).toFixed(2)}</p>
-                <p className="productName">{product.name}</p>
-                <p className="productDescription">{product.description}</p>
-                <Link to="/">Home</Link>
+                <div className="primDescWrapper"><h1 className="productPrice">${parseFloat(product.price).toFixed(2)}</h1></div>
+                <div className="primDescWrapper"><p className="productName">{product.name}</p></div>
+                <div className="descWrapper"><p className="productDescription">{product.description}</p></div>
             </div>
         </div>
         <div id="reviewWrapper">
             <div id="linksForUser">
-                <h1>{reviews.length} Total Reviews</h1>
+                <h1>{reviews.length} Reviews</h1>
                 {userLinks}
             </div>
             <div id="reviewsContainer">

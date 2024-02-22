@@ -13,24 +13,62 @@
     margin: 0 auto;
     height: 70vh;
     justify-content: space-between;
-    border: 2px solid yellow;
+    margin-top: 1%;
 }
 
 
 #mainPictureContainer {
     width: 50%;
-    border: 2px solid orange;
 }
 
 #descriptionContainer {
     width: 50%;
-    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
 .productPrice {
     font-weight: bold;
-    font-size: 1.2em; 
+    font-size: 100%; 
+}
+
+.productName {
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.primDescWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 5%;
+    width: 70%;
+    margin-top: 2%;
+    font-family: Arial, sans-serif;
+}
+
+.primDescWrapper h1 {
+    font-size: 200%;
+}
+
+.primDescWrapper p {
+    font-size: 120%;
+}
+
+.descWrapper {
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30%;
+    width: 80%;
+    line-height: 110%;
+    font-family: Arial, sans-serif;
+    text-align: justify;
+    word-spacing: normal;
 }
 
 #reviewWrapper {
@@ -38,6 +76,7 @@
     flex-direction: column;
     width: 85%;
     align-items: center;
+    font-family: Arial, sans-serif;
 }
 
 #linksForUser {
@@ -51,7 +90,7 @@
 
 #linksForUser h1 {
     font-size: 175%;
-    margin-right: 5%;
+    margin-right: 2%;
 }
 
 #reviewButton {
@@ -79,7 +118,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
 }
 
@@ -91,9 +130,10 @@
 
 #reviewOtherLinks {
     width: 50%;
-    height: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: start;
     align-items: center;
 }
 
@@ -104,7 +144,7 @@
     align-items: center;
     justify-content: start;
     width: 70%;
-    height: 20%;
+    height: 2%;
     font-size: 115%;
 }
 

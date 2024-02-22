@@ -86,7 +86,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 175%;
+    font-size: 135%;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -118,7 +118,7 @@
 
 #mainPageBottomNav {
     max-width: 100vw;
-    height: 20vh;
+    height: 25vh;
     overflow-x: hidden;
     background-color: #3140af;
     display: flex;
@@ -144,8 +144,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10vh;
-    height: 10vh;
+    width: 15vh;
+    height: 15vh;
     background-color: #f1641e;
     border-radius: 10px;
 }

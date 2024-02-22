@@ -25,49 +25,95 @@ function ReviewCreateForm({review}) {
 
     let theReview = {id: review?.id, body: body, rating: rating, product_id: actualProductId, user_id: userId}
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
 
-        setErrors([]);
-
+    const closeReviewModal = () => {
         let reviewBackgroundClose = document.getElementById("createReviewBacgkround");
         let reviewClose = document.getElementById("createReviewContainer");
-
+    
         reviewBackgroundClose.style.display = "none";
         reviewClose.style.display = "none";
+    }
 
-        if (review) {
-            return dispatch(reviewActions.updateReview(theReview))
-                .catch(async (res) => {
-                    let data;
-                    try {
-                        data = await res.clone().json();
-                    } catch {
-                        data = await res.text();
-                    }
-                    if (data?.errors) setErrors(data.errors);
-                    else if (data) setErrors([data])
-                    else setErrors([res.statusText]);
-                })
+    const handleErrorResponse = async (res) => {
+        let data;
+        try {
+            data = await res.clone().json();
+        } catch {
+            data = await res.text();
+        }
+    
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
+    }
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+
+    //     setErrors([]);
+
+
+    //     if (review) {
+    //         try {
+    //             await dispatch(reviewActions.updateReview(theReview);
+    //             closeReviewModal();
+    //             } catch (async (res) => {
+    //                 let data;
+    //                 try {
+    //                     data = await res.clone().json();
+    //                 } catch {
+    //                     data = await res.text();
+    //                 }
+    //                 if (data?.errors) setErrors(data.errors);
+    //                 else if (data) setErrors([data])
+    //                 else setErrors([res.statusText]);
+    //             })
             
+    //     } else {
+    //         await dispatch(reviewActions.createReview(theReview))
+    //             .catch(async (res) => {
+    //                 let data;
+    //                 try {
+    //                     data = await res.clone().json();
+    //                 } catch {
+    //                     data = await res.text();
+    //                 }
+    //                 if (data?.errors) setErrors(data.errors);
+    //                 else if (data) setErrors([data])
+    //                 else setErrors([res.statusText]);
+    //             })
+    //     }
+    // }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        setErrors([]);
+    
+        if (review) {
+            try {
+                await dispatch(reviewActions.updateReview(theReview));
+                // Close the modal only if there are no errors
+                closeReviewModal();
+            } catch (res) {
+                handleErrorResponse(res);
+            }
         } else {
-            return dispatch(reviewActions.createReview(theReview))
-                .catch(async (res) => {
-                    let data;
-                    try {
-                        data = await res.clone().json();
-                    } catch {
-                        data = await res.text();
-                    }
-                    if (data?.errors) setErrors(data.errors);
-                    else if (data) setErrors([data])
-                    else setErrors([res.statusText]);
-                })
+            try {
+                await dispatch(reviewActions.createReview(theReview));
+                // Close the modal only if there are no errors
+                closeReviewModal();
+            } catch (res) {
+                handleErrorResponse(res);
+            }
         }
     }
 
     const handleClose = (e) => {
         e.preventDefault();
+        setErrors([]);
+        setRating("");
+        setBody("");
 
         let reviewBackgroundClose = document.getElementById("createReviewBacgkround");
         let reviewClose = document.getElementById("createReviewContainer");
@@ -93,7 +139,7 @@ function ReviewCreateForm({review}) {
                     <input id="ratingInput" type="number" value={rating} min={1} max={5} onChange={(e) => setRating(e.target.value)} />
                 </label>
                 <label>Add a written review
-                    <input id="reviewInput" type="text" value={body} onChange={(e) => setBody(e.target.value)} />
+                    <textarea id="reviewInput" value={body} onChange={(e) => setBody(e.target.value)} />
                 </label>
                 <button id="reviewSubmitButton" type="submit">Submit</button>
             </form>

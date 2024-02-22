@@ -1,41 +1,44 @@
 
 #profileIcon {
-    background-color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    position: relative;
-    right: 2%;
-  }
-  
-  #profileIcon:hover {
-    background-color: rgba(173, 216, 230, 0.7); 
-  }
-  
-  .profile-dropdown {
-    list-style: circle;
-    padding: 10px;
-    margin: 0;
-    background-color: royalblue;
-    color: #fff;
-    border-radius: 10px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
-  }
-  
-  .profile-dropdown li {
-    margin-bottom: 10px;
-  }
-  
-  #logoutButton {
-    background-color: #fff;
-    color: royalblue;
-    border: 1px solid royalblue;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  #logoutButton:hover {
-    background-color: royalblue;
-    color: #fff;
-  }
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 200%;
+  position: relative;
+  right: 2%;
+  transition: all 0.2s ease;
+}
+
+#profileIcon:hover {
+  transform: scale(1.05);
+}
+
+.profile-dropdown {
+  list-style: circle;
+  padding: 2.5vh;
+  background-color: royalblue;
+  color: #fff;
+  border-radius: 10px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 6vh;
+  margin-left: 80%;
+  position: fixed;
+}
+
+.profile-dropdown li {
+  margin-bottom: 1vh;
+}
+
+#logoutButton {
+  background-color: #fff;
+  color: royalblue;
+  border: 1px solid royalblue;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#logoutButton:hover {
+  transform: scale(1.05);
+}

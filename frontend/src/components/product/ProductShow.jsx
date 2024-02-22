@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, fetchProduct } from "../../store/products";
 import "./ProductShow.css";
@@ -16,11 +16,25 @@ export default function ProductShow() {
     const allReviews = useSelector(selectReviewsArray);
     const reviews = allReviews.filter(review => review.productId === product.id);
 
+
     const [review, setReview] = useState(null);
+    const [futureDate, setfutureDate] = useState(null);
     
     useEffect(() => {
         dispatch(fetchReviews());
     }, [dispatch])
+
+    useEffect(() => {
+        const currentDate = new Date();
+        const futureDate = new Date(currentDate.setDate(currentDate.getDate() + 7));
+        const formattedDate = futureDate.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+    
+        setfutureDate(formattedDate);
+      }, []);
 
 
 
@@ -48,7 +62,7 @@ export default function ProductShow() {
         e.preventDefault();
         const review = e.target.dataset.review;
 
-        console.log(review)
+
         setReview(JSON.parse(review))
         let reviewModalBG = document.getElementById("createReviewBacgkround");
         let reviewModal = document.getElementById("createReviewContainer");
@@ -56,6 +70,17 @@ export default function ProductShow() {
         reviewModalBG.style.display = "block";
         reviewModal.style.display = "block";
     }
+
+    const authorNotes = [
+        'A new customer',
+        'An avid purchaser',
+        'A returning customer',
+        'First time buyer',
+        'Long time customer',
+        'A frequent purchaser',
+        'One customer',
+        'A new user'
+    ]
 
 
     let userLinks;
@@ -82,25 +107,66 @@ return(
                 <img className="productPhotoUrl" src={product?.photoUrl} />
             </div>
             <div className="productContainer" id="descriptionContainer">
-                <p className="productPrice">${product.price}</p>
-                <p className="productName">{product.name}</p>
-                <p className="productDescription">{product.description}</p>
-                <Link to="/">Home</Link>
+                <div className="primDescWrapper"><h1 className="productPrice">${parseFloat(product.price).toFixed(2)}</h1></div>
+                <div className="primDescWrapper"><p className="productName">{product.name}</p></div>
+                <div className="descWrapper"><p className="productDescription">{product.description}</p></div>
             </div>
         </div>
-        <div id="linksForUser">
-            {userLinks}
-        </div>
-        <div id="reviewsContainer">
-                {reviews.map(review => {
-                    return <div className="reviewCard" key={review.id}>
-                        <p className="reviewRating">{Array.from({ length: review.rating }, (_, index) => <span key={index}>★</span>)}</p>
-                        <p className="reviewBody">{review.body}</p> 
-                        {sessionUser?.id === review.userId ? <button id="deleteRevButton" onClick={() => dispatch(deleteReview(review.id))}>D</button> : null}
-                        {sessionUser?.id === review.userId ? <button id="updateRevButton" data-review={JSON.stringify(review)} onClick={handleUpdateReview}>U</button> : null}
+        <div id="reviewWrapper">
+            <div id="linksForUser">
+                <h1>{reviews.length} Reviews</h1>
+                {userLinks}
+            </div>
+            <div id="reviewsContainer">
+                <div id="reviewCardsWrapper">
+                    {reviews.map(review => {
+                        return <div className="reviewCard" key={review.id}>
+
+                            <div id="ratingWrapper">
+                                {/* <p className="reviewRating">{Array.from({ length: review.rating }, (_, index) => <span key={index}>★</span>)}</p> */}
+                                    <p className="reviewRating">
+                                        {[...Array(5)].map((_, index) => (
+                                            <i key={index} className={index < review.rating ? "fas fa-star" : "far fa-star"}></i>
+                                        ))}
+                                    </p>
+                            </div>
+
+                            <div id="authorWrapper">
+                                {sessionUser?.id === review.userId? <p>You wrote:</p> : <p>{authorNotes[Math.floor(Math.random() * authorNotes.length)]} writes:</p>}
+                            </div>
+
+                            <div id="bodyWrapper">
+                                <p className="reviewBody">{review.body}</p>
+                            </div>
+                            <div id="updateDeleteWrapper"> 
+                            {sessionUser?.id === review.userId ? <button id="updateRevButton" data-review={JSON.stringify(review)} onClick={handleUpdateReview}><i className="fa-solid fa-pen-to-square"></i></button> : null}
+                            {sessionUser?.id === review.userId ? <button id="deleteRevButton" onClick={() => dispatch(deleteReview(review.id))}><i className="fa-solid fa-trash"></i></button> : null}
+                            </div>
+                        </div>
+                    })}
+                </div>
+                <div id="reviewOtherLinks">
+                    <div className="orderDetails">
+                        <h1>Shipping & Return Policies:</h1>
                     </div>
-                })}
+                    <div className="orderDetails">
+                        <i className="fa-regular fa-calendar"></i>
+                        <p>Order now to get by...{futureDate}</p>
+                    </div>
+                    <div className="orderDetails">
+                        <i className="fa-solid fa-box"></i>
+                        <p>Returns & exchanges accepted within 30 days</p>
+                    </div>
+                    <div className="orderDetails">
+                        <i className="fa-solid fa-truck-fast"></i>
+                        <p>Free shipping!</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        </div>
+        <div id="bottomShowLinks">
+                
         </div>
         </>
 )

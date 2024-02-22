@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 95vw;
+    align-items: center;
 }
 
 #productShowContainer {
@@ -12,71 +13,187 @@
     margin: 0 auto;
     height: 70vh;
     justify-content: space-between;
-    border: 2px solid yellow;
+    margin-top: 1%;
 }
 
 
 #mainPictureContainer {
     width: 50%;
-    border: 2px solid orange;
 }
 
 #descriptionContainer {
     width: 50%;
-    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.productContainer {
-    padding: 10px;
-}
 
 .productPrice {
     font-weight: bold;
-    font-size: 1.2em; 
+    font-size: 100%; 
+}
+
+.productName {
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.primDescWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 5%;
+    width: 70%;
+    margin-top: 2%;
+    font-family: Arial, sans-serif;
+}
+
+.primDescWrapper h1 {
+    font-size: 200%;
+}
+
+.primDescWrapper p {
+    font-size: 120%;
+}
+
+.descWrapper {
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30%;
+    width: 80%;
+    line-height: 110%;
+    font-family: Arial, sans-serif;
+    text-align: justify;
+    word-spacing: normal;
+}
+
+#reviewWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+#linksForUser {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: row;
+}
+
+#linksForUser h1 {
+    font-size: 175%;
+    margin-right: 2%;
 }
 
 #reviewButton {
-    margin-top: 20px;
-    position: relative;
-    left: 7.3%;
     background-color: black;
     color: white;
-    /* border: none; */
-    width: 200px;
-    height: 40px;
+    width: 15vw;
+    height: 5vh;
+    font-size: 125%;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 #reviewButton:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    transform: scale(1.05)
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.02)
 }
 
 #reviewsContainer {
     /* position: relative;
     left: 7.3%; */
-    width: 85%;
-    margin-left: 7.3%;
-    border: 2px solid green;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+}
+
+#reviewCardsWrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#reviewOtherLinks {
+    width: 50%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.orderDetails {
+    margin-right: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 70%;
+    height: 2%;
+    font-size: 115%;
+}
+
+.orderDetails p {
+    margin-left: 3%;
+}
+
+.orderDetails h1 {
+    font-style: italic;
+    font-size: 125%;
 }
 
 .reviewCard {
-    border: 1px solid black;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    width: 645px;
-    border-bottom: solid grey;
+    width: 100%;
+    height: 30vh;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.667);
+    display: flex;
+    flex-direction: column;
+}
+
+#ratingWrapper {
+    margin-top: 2%;
+    height: 25%;
+    width: 100%;
+    font-size: 200%;
+    color: #f1641ecc;
+}
+
+#authorWrapper {
+    font-size: 115%;
+}
+
+#bodyWrapper {
+    margin-top: 1vh;
+    height: 25%;
+    width: 100%;
+    font-size: 100%;
+}
+
+#updateDeleteWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: end;
+    height: 50%;
+    width: 100%;
 }
 
 #updateRevButton {
-    position: relative;
-    left: 3%;
-    bottom: 5px;
-    transform: translateX(-50%);
     background-color: black;
     color: white;
     /* border: none; */
@@ -91,10 +208,6 @@
 }
 
 #deleteRevButton {
-    position: relative;
-    bottom: -34px;
-    left: 12%;
-    transform: translateX(-50%);
     background-color: black;
     color: white;
     /* border: none; */
@@ -113,4 +226,12 @@
 }
 #updateRevButton:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+#bottomShowLinks {
+    max-width: 100vw;
+    height: 20vh;
+    background-color: #3140af;
+    overflow-x: hidden;
+    margin-top: 2vh;
 }

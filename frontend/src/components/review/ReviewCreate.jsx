@@ -33,8 +33,10 @@ function ReviewCreateForm({review}) {
         let reviewBackgroundClose = document.getElementById("createReviewBacgkround");
         let reviewClose = document.getElementById("createReviewContainer");
 
-        reviewBackgroundClose.style.display = "none";
-        reviewClose.style.display = "none";
+        if (review) {
+            reviewBackgroundClose.style.display = "none";
+            reviewClose.style.display = "none";
+        }
 
         if (review) {
             return dispatch(reviewActions.updateReview(theReview))
@@ -68,6 +70,7 @@ function ReviewCreateForm({review}) {
 
     const handleClose = (e) => {
         e.preventDefault();
+        setErrors([]);
 
         let reviewBackgroundClose = document.getElementById("createReviewBacgkround");
         let reviewClose = document.getElementById("createReviewContainer");

@@ -77,7 +77,7 @@ export default function ProductsIndex() {
                     return <div className="productCard" key={product.id} onClick={() => navigate(`/products/${product.id}`)}>
                         <img className="productPhotoUrl" src={product?.photoUrl} />
                         <div className="priceContainer">
-                            <p>${product.price}</p>
+                            <p>${parseFloat(product.price).toFixed(2)}</p>
                         </div>
                     </div>
                 })}

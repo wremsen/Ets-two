@@ -15,13 +15,13 @@
 
 .profile-dropdown {
   list-style: circle;
-  padding: 3vh;
+  padding: 2.5vh;
   background-color: royalblue;
   color: #fff;
   border-radius: 10px; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  margin-top: 5vh;
-  margin-left: 75%;
+  margin-top: 6vh;
+  margin-left: 80%;
   position: fixed;
 }
 

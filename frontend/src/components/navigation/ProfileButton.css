@@ -1,4 +1,3 @@
-
 #profileIcon {
   background-color: #fff;
   border: none;
@@ -14,6 +13,7 @@
 }
 
 .profile-dropdown {
+  font-family: Arial, sans-serif;
   list-style: circle;
   padding: 2.5vh;
   background-color: royalblue;

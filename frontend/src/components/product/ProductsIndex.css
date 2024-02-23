@@ -47,6 +47,7 @@
     margin-left: 2%;
     margin-top: -14%;
     font-size: 105%;
+    font-family: Arial, sans-serif;
 }
 
 .productPhotoUrl {
@@ -65,8 +66,9 @@
 
 #splashMessage {
     text-align: center;
-    font-size: 35px;
+    font-size: 250%;
     margin-top: 5px;
+    font-family: Arial, sans-serif;
 }
 
 .splashButtonContainer {
@@ -86,8 +88,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 135%;
+    font-size: 125%;
     transition: transform 0.2s ease-in-out;
+    font-family: Arial, sans-serif;
 }
 
 .navText {
@@ -117,6 +120,7 @@
 }
 
 #mainPageBottomNav {
+    font-family: Arial, sans-serif;
     max-width: 100vw;
     height: 25vh;
     overflow-x: hidden;
@@ -133,6 +137,7 @@
 }
 
 #logoConatiner{
+    margin-left: .75%;
     height: 90%;
     width: 20%;
     display: flex;
@@ -174,6 +179,10 @@
     padding: 2%;
 }
 
+#linksContainer {
+    margin-left: 20%;
+}
+
 .aboutCont p {
     color: white;
     font-size: 110%;
@@ -187,6 +196,7 @@
     cursor: pointer;
     margin-top: 2px;
 }
+
 
 .linksToPages:hover {
     text-decoration: underline;

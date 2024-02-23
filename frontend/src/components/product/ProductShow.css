@@ -179,18 +179,20 @@
 
 #bodyWrapper {
     margin-top: 1vh;
-    height: 25%;
+    min-height: 25%;
+    max-height: auto;
     width: 100%;
     font-size: 100%;
+    word-wrap: break-word;
 }
 
 #updateDeleteWrapper {
     display: flex;
     flex-direction: row;
     align-items: end;
-    justify-content: end;
-    height: 50%;
-    width: 100%;
+    justify-content: start;
+    height: 30%;
+    width: 95%;
 }
 
 #updateRevButton {
@@ -198,13 +200,13 @@
     color: white;
     /* border: none; */
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 7vh;
+    height: 7vh;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.3s, opacity 0.3s;
+    transition: all 0.4s ease;
 }
 
 #deleteRevButton {
@@ -212,20 +214,23 @@
     color: white;
     /* border: none; */
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 7vh;
+    height: 7vh;
+    margin-left: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.3s, opacity 0.3s;
+    transition: all 0.4s ease;
 }
 
 #deleteRevButton:hover {
     background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.03);
 }
 #updateRevButton:hover {
     background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.03);
 }
 
 #bottomShowLinks {
@@ -234,4 +239,14 @@
     background-color: #3140af;
     overflow-x: hidden;
     margin-top: 2vh;
+}
+
+#bottomShowLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#etsTwoSquare {
+    cursor: pointer;
 }

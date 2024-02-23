@@ -61,15 +61,25 @@ export default function ProductShow() {
     const handleUpdateReview = (e) => {
         e.preventDefault();
         const review = e.target.dataset.review;
+        
 
 
-        setReview(JSON.parse(review))
+        // setReview(JSON.parse(review))
         let reviewModalBG = document.getElementById("createReviewBacgkround");
         let reviewModal = document.getElementById("createReviewContainer");
 
         reviewModalBG.style.display = "block";
         reviewModal.style.display = "block";
+        setReview(JSON.parse(review))
     }
+
+    
+    
+
+
+
+
+
 
     const authorNotes = [
         'A new customer',
@@ -98,6 +108,20 @@ export default function ProductShow() {
       </>
     );
   }
+
+  const handleNavPersonal = (website) => {
+    if (website === 'echo') {
+        window.location.href = 'https://echo-p48f.onrender.com/'
+    } else if (website === 'cosmic') {
+        window.location.href = 'https://wremsen.github.io/CosmicClasses/'
+    } else if (website === 'person') {
+        window.location.href = 'https://github.com/wremsen'
+    } else if (website === 'linkedin') {
+        window.location.href = 'https://www.linkedin.com/in/billy-remsen-b0969a120/'
+    } else {
+        window.location.href = 'https://github.com/wremsen'
+    }
+}
 
 return(
         <>
@@ -166,7 +190,23 @@ return(
         </div>
         </div>
         <div id="bottomShowLinks">
-                
+                <div id="logoConatiner">
+                    <div id="etsTwoSquare">
+                        <p>Ets-two</p>
+                    </div>
+                </div>
+
+                <div id="linksContainer" className="bottomNavContainer">
+                    <div className="h1Wrapper">
+                        <h1>Links:</h1>
+                    </div>
+                    <div id="linksWrap" className="aboutCont">
+                        <p className="linksToPages" onClick={() => handleNavPersonal('person')}>Portfolio</p>
+                        <p className="linksToPages" onClick={() => handleNavPersonal('linkedin')}>LinkedIn</p>
+                        <p className="linksToPages" onClick={() => handleNavPersonal('github')}>GitHub</p>
+                        <p className="linksToPages" onClick={() => handleNavPersonal('github')}>Resume</p>
+                    </div>
+                </div>
         </div>
         </>
 )

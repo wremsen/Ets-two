@@ -123,7 +123,7 @@ require "open-uri"
       body: Faker::Lorem.paragraph(sentence_count: 8),
       rating: rand(1..5),
       product_id: (i + 1) % 24 + 1,
-      user_id: rand(1..11)
+      user_id: rand(2..11)
     )
   end
 

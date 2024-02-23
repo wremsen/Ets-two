@@ -100,7 +100,7 @@ export default function ProductsIndex() {
                     <div className="h1Wrapper">
                         <h1>Links:</h1>
                     </div>
-                    <div className="aboutCont">
+                    <div id="linksWrap" className="aboutCont">
                         <p className="linksToPages" onClick={() => handleNavPersonal('person')}>Portfolio</p>
                         <p className="linksToPages" onClick={() => handleNavPersonal('linkedin')}>LinkedIn</p>
                         <p className="linksToPages" onClick={() => handleNavPersonal('github')}>GitHub</p>

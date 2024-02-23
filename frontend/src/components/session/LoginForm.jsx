@@ -58,6 +58,9 @@ function LoginForm() {
 
     const navToRegister = (e) => {
         e.preventDefault();
+        setErrors([]);
+        setEmail('');
+        setPassword('');
         let signInModal = document.getElementById("signInContainer");
         signInModal.style.display = "none";
 

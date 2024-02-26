@@ -66,7 +66,6 @@ export default function ProductShow() {
     const handleUpdateReview = (event) => {
         const reviewData = event.currentTarget.getAttribute("data-review");
         const review = JSON.parse(reviewData);
-        console.log(review)
 
         if (review) {
             setReview(review);

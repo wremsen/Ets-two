@@ -12,16 +12,22 @@ export default function ProductShow() {
     const dispatch = useDispatch();
     const [review, setReview] = useState(null);
     const [futureDate, setfutureDate] = useState(null);
+    const [revs, setRevs] = useState([])
 
     const product = useSelector(selectProduct(productId));
     const sessionUser = useSelector(state => state.session.user);
+
     const allReviews = useSelector(selectReviewsArray);
-    const reviews = allReviews.filter(review => review.productId === product.id);
 
     
     useEffect(() => {
         dispatch(fetchReviews());
     }, [dispatch])
+
+    useEffect(() => {
+        setRevs(allReviews.filter((rev) => rev.productId === product.id));
+    }, [allReviews, product.id]);
+
 
     useEffect(() => {
         const currentDate = new Date();
@@ -57,15 +63,13 @@ export default function ProductShow() {
         reviewModal.style.display = "block";
     }
 
-    const handleUpdateReview = (e) => {
-        e.preventDefault();
-        const review = e.target.dataset.review;
+    const handleUpdateReview = (event) => {
+        const reviewData = event.currentTarget.getAttribute("data-review");
+        const review = JSON.parse(reviewData);
+        console.log(review)
 
         if (review) {
-            setReview((prevReview) => {
-              const updatedReview = JSON.parse(review);
-              return { ...prevReview, ...updatedReview };
-            });
+            setReview(review);
         }
         
         let reviewModalBG = document.getElementById("createReviewBacgkround");
@@ -73,6 +77,7 @@ export default function ProductShow() {
 
         reviewModalBG.style.display = "block";
         reviewModal.style.display = "block";
+        
     }
 
     
@@ -125,6 +130,7 @@ export default function ProductShow() {
     }
 }
 
+
 return(
         <>
         <div id="allProductPageWrapper">
@@ -140,12 +146,12 @@ return(
         </div>
         <div id="reviewWrapper">
             <div id="linksForUser">
-                <h1>{reviews.length} Reviews</h1>
+                <h1>{revs.length} Reviews</h1>
                 {userLinks}
             </div>
             <div id="reviewsContainer">
                 <div id="reviewCardsWrapper">
-                    {reviews.map(review => {
+                    {revs.map(review => {
                         return <div className="reviewCard" key={review.id}>
 
                             <div id="ratingWrapper">
@@ -199,21 +205,21 @@ return(
         </div>
         </div>
         <div id="bottomShowLinks">
-                <div id="logoConatiner">
-                    <div id="etsTwoSquare">
+                <div id="squareCont">
+                    <div id="etsSquare">
                         <p>Ets-two</p>
                     </div>
                 </div>
 
-                <div id="linksContainer" className="bottomNavContainer">
+                <div id="linksC">
                     <div className="h1Wrapper">
                         <h1>Links:</h1>
                     </div>
-                    <div id="linksWrap" className="aboutCont">
-                        <p className="linksToPages" onClick={() => handleNavPersonal('person')}>Portfolio</p>
-                        <p className="linksToPages" onClick={() => handleNavPersonal('linkedin')}>LinkedIn</p>
-                        <p className="linksToPages" onClick={() => handleNavPersonal('github')}>GitHub</p>
-                        <p className="linksToPages" onClick={() => handleNavPersonal('github')}>Resume</p>
+                    <div id="showlinksWrap">
+                        <p className="showLinkP" onClick={() => handleNavPersonal('person')}>Portfolio</p>
+                        <p className="showLinkP" onClick={() => handleNavPersonal('linkedin')}>LinkedIn</p>
+                        <p className="showLinkP" onClick={() => handleNavPersonal('github')}>GitHub</p>
+                        <p className="showLinkP" onClick={() => handleNavPersonal('github')}>Resume</p>
                     </div>
                 </div>
         </div>

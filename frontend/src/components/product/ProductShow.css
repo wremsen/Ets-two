@@ -239,14 +239,51 @@
     background-color: #3140af;
     overflow-x: hidden;
     margin-top: 2vh;
+    font-family: Arial, sans-serif;
 }
 
 #bottomShowLinks {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
 }
 
-#etsTwoSquare {
+#squareCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vh;
+    height: 15vh;
+    background-color: #f1641e;
+    border-radius: 10px;
+    color: white;
+    font-size: 150%;
+}
+
+#linksC {
+    height: 15vh;
+    width: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 110%;
+}
+
+#linksC h1 {
+    font-size: 150%;
+}
+
+#showlinksWrap {
+    margin-top: 1vh;
+}
+
+.showLinkP {
     cursor: pointer;
+    margin-top: 2px;
+}
+
+.showLinkP:hover {
+    text-decoration: underline;
 }

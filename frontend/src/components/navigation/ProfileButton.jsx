@@ -33,19 +33,17 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <>
+    <div className="profile-container">
       <button id='profileIcon' onClick={toggleMenu}>
         <i className="fa-solid fa-user-circle" />
       </button>
       {showMenu && (
         <ul id='profileDropDown' className="profile-dropdown" ref={dropdownRef}>
-          <li>{user.email}</li>
-          <li>
-            <button id='logoutButton' onClick={logout}>Log Out</button>
-          </li>
+          <p>{user.email}</p>
+          <button id='logoutButton' onClick={logout}>Log Out</button>
         </ul>
       )}
-    </>
+    </div>
   );
 }
 

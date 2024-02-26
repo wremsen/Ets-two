@@ -35,7 +35,7 @@ class Api::ReviewsController < ApplicationController
     def destroy
         @review = Review.find(params[:id])
 
-        if @reivew && @review.user_id = current_user.id
+        if @review && @review.user_id = current_user.id
             @review.destroy
         else
             render json: { errors: @review.errors.full_messages }

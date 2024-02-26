@@ -23,7 +23,7 @@ function ReviewCreateForm({review}) {
     }, [review])
 
 
-    let theReview = {id: review?.id, body: body, rating: rating, product_id: actualProductId, user_id: userId}
+    let theReview = {id: review ? review.id : null, body: body, rating: rating, product_id: actualProductId, user_id: userId}
 
 
     const closeReviewModal = () => {
@@ -90,22 +90,36 @@ function ReviewCreateForm({review}) {
     
         setErrors([]);
     
-        if (review) {
-            try {
+        // if (review) {
+        //     try {
+        //         await dispatch(reviewActions.updateReview(theReview));
+        //         // Close the modal only if there are no errors
+        //         closeReviewModal();
+        //     } catch (res) {
+        //         handleErrorResponse(res);
+        //     }
+        // } else {
+        //     try {
+        //         await dispatch(reviewActions.createReview(theReview));
+        //         // Close the modal only if there are no errors
+        //         closeReviewModal();
+        //     } catch (res) {
+        //         handleErrorResponse(res);
+        //     }
+        // }
+
+        e.preventDefault();
+        setErrors([]);
+    
+        try {
+            if (review) {
                 await dispatch(reviewActions.updateReview(theReview));
-                // Close the modal only if there are no errors
-                closeReviewModal();
-            } catch (res) {
-                handleErrorResponse(res);
-            }
-        } else {
-            try {
+            } else {
                 await dispatch(reviewActions.createReview(theReview));
-                // Close the modal only if there are no errors
-                closeReviewModal();
-            } catch (res) {
-                handleErrorResponse(res);
             }
+            closeReviewModal();
+        } catch (res) {
+            handleErrorResponse(res);
         }
     }
 

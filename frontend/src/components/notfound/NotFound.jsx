@@ -10,7 +10,7 @@ const NotFound = () => {
 
     return (
         <div id="notFoundWrapper">
-            <h1>Oops! Looks like there was some sort of problem. Click below to return home!</h1>
+            <h1>Oops! Looks like there was some sort of problem. Please click below to return home!</h1>
             <div id="etsTwoBox" onClick={handleNav}>
                 <h2>Ets-Two</h2>
             </div>

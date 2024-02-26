@@ -10,15 +10,14 @@ export default function ProductShow() {
     const {productId} = useParams();
 
     const dispatch = useDispatch();
+    const [review, setReview] = useState(null);
+    const [futureDate, setfutureDate] = useState(null);
 
     const product = useSelector(selectProduct(productId));
     const sessionUser = useSelector(state => state.session.user);
     const allReviews = useSelector(selectReviewsArray);
     const reviews = allReviews.filter(review => review.productId === product.id);
 
-
-    const [review, setReview] = useState(null);
-    const [futureDate, setfutureDate] = useState(null);
     
     useEffect(() => {
         dispatch(fetchReviews());
@@ -61,16 +60,21 @@ export default function ProductShow() {
     const handleUpdateReview = (e) => {
         e.preventDefault();
         const review = e.target.dataset.review;
+
+        console.log('My Review: ', review)
+
+        if (review) {
+            setReview((prevReview) => {
+              const updatedReview = JSON.parse(review);
+              return { ...prevReview, ...updatedReview };
+            });
+        }
         
-
-
-        // setReview(JSON.parse(review))
         let reviewModalBG = document.getElementById("createReviewBacgkround");
         let reviewModal = document.getElementById("createReviewContainer");
 
         reviewModalBG.style.display = "block";
         reviewModal.style.display = "block";
-        setReview(JSON.parse(review))
     }
 
     
@@ -163,7 +167,14 @@ return(
                                 <p className="reviewBody">{review.body}</p>
                             </div>
                             <div id="updateDeleteWrapper"> 
-                            {sessionUser?.id === review.userId ? <button id="updateRevButton" data-review={JSON.stringify(review)} onClick={handleUpdateReview}><i className="fa-solid fa-pen-to-square"></i></button> : null}
+                            {/* {sessionUser?.id === review?.userId ? <button id="updateRevButton" data-review={JSON.stringify(review)} onClick={handleUpdateReview}><i className="fa-solid fa-pen-to-square"></i></button> : null} */}      
+                            
+                            {sessionUser?.id === review?.userId && review ? (
+                            <button id="updateRevButton" data-review={JSON.stringify(review)} onClick={handleUpdateReview}>
+                            <i className="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            ) : null}
+                            
                             {sessionUser?.id === review.userId ? <button id="deleteRevButton" onClick={() => dispatch(deleteReview(review.id))}><i className="fa-solid fa-trash"></i></button> : null}
                             </div>
                         </div>

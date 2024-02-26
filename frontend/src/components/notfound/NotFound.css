@@ -1,0 +1,31 @@
+#notFoundWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+#notFoundWrapper h1 {
+    font-size: 200%;
+    margin-top: 7%;
+}
+
+#etsTwoBox {
+    width: 27vh;
+    height: 27vh;
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1641e;
+    font-size: 175%;
+    color: white;
+    border-radius: 10%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#etsTwoBox:hover {
+    transform: scale(1.01);
+}

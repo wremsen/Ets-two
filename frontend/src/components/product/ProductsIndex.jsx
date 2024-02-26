@@ -93,7 +93,7 @@ export default function ProductsIndex() {
                         <h1>About:</h1>
                     </div>
                     <div className="aboutCont">
-                        <p>Ets-two is a single page application built using a React/Redux frontend with a Rails backend. Data is stored using PostgreSQL, and the application makes use of AWS S3 for media storage. Ets-two aims to mimic the UX from Etsy where users can browse products, leave reviews, and purchase items.</p>
+                        <p>Ets-two is a single page application built using a React/Redux frontend with a Rails backend. Data is stored using PostgreSQL, and the application makes use of AWS S3 for media storage. </p>
                     </div>
                 </div>
                 <div id="linksContainer" className="bottomNavContainer">

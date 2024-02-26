@@ -9,6 +9,7 @@ import ProductsIndex from './components/product/ProductsIndex';
 import ProductShow from './components/product/ProductShow';
 // import ReviewsIndex from './components/review/ReviewsIndex';
 import ReviewCreateForm from './components/review/ReviewCreate';
+import NotFound from './components/notfound/NotFound';
 
 
 
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: '/reviewaproduct',
         element: <ReviewCreateForm />
+      },
+      {
+        path: '*',
+        element: <NotFound />
       }
     ]
   }

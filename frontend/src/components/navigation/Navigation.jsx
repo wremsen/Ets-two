@@ -59,11 +59,11 @@ function Navigation() {
                     <LoginForm/>
         </div>
         <div id="bottomContainer">
-          <button id="bottomNavButton" onClick={() => handleNavProduct(5)}>Valentines Day</button>
-          <button id="bottomNavButton" onClick={() => handleNavProduct(8)}>Home Favorites</button>
-          <button id="bottomNavButton" onClick={() => handleNavProduct(12)}>Fashion Finds</button>
-          <button id="bottomNavButton" onClick={() => handleNavProduct(7)}>Gift Guides</button>
-          <button id="bottomNavButton" onClick={() => handleNavProduct(18)}>Registry</button>
+          <button id="bottomNavButton" onClick={() => handleNavProduct(1)}>Amazing Smart Lamp</button>
+          <button id="bottomNavButton" onClick={() => handleNavProduct(16)}>The Best Toothbrush</button>
+          <button id="bottomNavButton" onClick={() => handleNavProduct(12)}>Solar Charger</button>
+          <button id="bottomNavButton" onClick={() => handleNavProduct(7)}>Smart Water Bottle</button>
+          <button id="bottomNavButton" onClick={() => handleNavProduct(14)}>Noise-Canceling Earplugs</button>
         </div>
     </div>
     </>

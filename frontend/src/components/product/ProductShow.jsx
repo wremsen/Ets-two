@@ -61,8 +61,6 @@ export default function ProductShow() {
         e.preventDefault();
         const review = e.target.dataset.review;
 
-        console.log('My Review: ', review)
-
         if (review) {
             setReview((prevReview) => {
               const updatedReview = JSON.parse(review);
@@ -174,7 +172,7 @@ return(
                             <i className="fa-solid fa-pen-to-square"></i>
                             </button>
                             ) : null}
-                            
+
                             {sessionUser?.id === review.userId ? <button id="deleteRevButton" onClick={() => dispatch(deleteReview(review.id))}><i className="fa-solid fa-trash"></i></button> : null}
                             </div>
                         </div>

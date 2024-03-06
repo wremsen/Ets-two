@@ -23,7 +23,7 @@ export default function ProductsIndex() {
             } else if (website === 'cosmic') {
                 window.location.href = 'https://wremsen.github.io/CosmicClasses/'
             } else if (website === 'person') {
-                window.location.href = 'https://github.com/wremsen'
+                window.location.href = 'https://wremsen.github.io/br-portfolio/'
             } else if (website === 'linkedin') {
                 window.location.href = 'https://www.linkedin.com/in/billy-remsen-b0969a120/'
             } else {
